@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 84" width="200" height="168" role="img" aria-label="BATATATI">
+  <defs>
+    <linearGradient id="pg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6da86"/><stop offset="1" stop-color="#d3992f"/></linearGradient>
+  </defs>
+  <path d="M52 22c-4-12 6-20 18-20 0 12-6 19-18 20z" fill="#4faa3e"/>
+  <path d="M44 24c-2-9-12-13-22-9 3 9 12 13 22 9z" fill="#6cc14f"/>
+  <svg x="4" y="14" width="92" height="64" viewBox="0 0 120 84">
+    <path d="M10 46C4 24 30 6 62 8c30 2 52 14 52 36 0 24-26 34-54 32C32 74 14 66 10 46Z" fill="url(#pg)" stroke="#b9822a" stroke-width="2"/>
+    <ellipse cx="38" cy="34" rx="3.6" ry="2.2" fill="#a8731f" opacity=".75"/>
+    <ellipse cx="74" cy="26" rx="3.2" ry="2" fill="#a8731f" opacity=".75"/>
+    <ellipse cx="86" cy="52" rx="3.4" ry="2.1" fill="#a8731f" opacity=".75"/>
+    <ellipse cx="52" cy="56" rx="3" ry="1.9" fill="#a8731f" opacity=".75"/>
+    <path d="M24 28c10-10 28-14 44-12" fill="none" stroke="#fff6cf" stroke-width="4" stroke-linecap="round" opacity=".55"/>
+  </svg>
+</svg>

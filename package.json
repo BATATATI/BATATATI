@@ -1,0 +1,12 @@
+{
+  "name": "batatati",
+  "version": "1.0.0",
+  "private": true,
+  "description": "BATATATI بطاطتي : prototype de site statique de réservation (HTML/CSS/JavaScript).",
+  "scripts": {
+    "dev": "npx --yes serve . -l 3000",
+    "start": "npx --yes serve . -l 3000",
+    "check": "node scripts/check.mjs"
+  },
+  "license": "UNLICENSED"
+}

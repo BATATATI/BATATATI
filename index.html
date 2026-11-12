@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BATATATI بطاطتي</title>
+<meta name="description" content="BATATATI بطاطتي : prototype de plateforme de réservation de pommes de terre en ligne.">
+<meta name="theme-color" content="#145a2f">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="BATATATI بطاطتي">
+<meta property="og:description" content="Prototype de plateforme de réservation de pommes de terre en ligne.">
+<meta property="og:image" content="assets/img/hero-bg.jpg">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- shared SVG symbols -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="pg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6da86"/><stop offset="1" stop-color="#d3992f"/>
+    </linearGradient>
+    <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#b98550"/><stop offset="1" stop-color="#7d5126"/>
+    </linearGradient>
+    <symbol id="potato" viewBox="0 0 120 84">
+      <path d="M10 46C4 24 30 6 62 8c30 2 52 14 52 36 0 24-26 34-54 32C32 74 14 66 10 46Z" fill="url(#pg)" stroke="#b9822a" stroke-width="2"/>
+      <ellipse cx="38" cy="34" rx="3.6" ry="2.2" fill="#a8731f" opacity=".75"/>
+      <ellipse cx="74" cy="26" rx="3.2" ry="2" fill="#a8731f" opacity=".75"/>
+      <ellipse cx="86" cy="52" rx="3.4" ry="2.1" fill="#a8731f" opacity=".75"/>
+      <ellipse cx="52" cy="56" rx="3" ry="1.9" fill="#a8731f" opacity=".75"/>
+      <path d="M24 28c10-10 28-14 44-12" fill="none" stroke="#fff6cf" stroke-width="4" stroke-linecap="round" opacity=".55"/>
+    </symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="currentColor"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z" fill="currentColor"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z" fill="currentColor"/><circle cx="12" cy="10" r="2.6" fill="#fff"/></symbol>
+    <symbol id="i-id" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="11" r="2" fill="currentColor"/><path d="M6 16c.5-2 5.5-2 6 0M14 10h4M14 14h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6 3h3l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v3a3 3 0 0 1-3 3A15 15 0 0 1 3 6a3 3 0 0 1 3-3z" fill="currentColor"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="m4 8 8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h3l2.4 11h9.6l2-8H7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="19" r="1.7" fill="currentColor"/><circle cx="17" cy="19" r="1.7" fill="currentColor"/></symbol>
+    <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9 6 4h12l2 5M4 9v11h16V9M4 9c0 2 3 2 4 0 1 2 3 2 4 0 1 2 3 2 4 0 1 2 4 2 4 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-clip" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 4V3h6v1M9 11l2 2 4-4M9 17h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11 12 3l9 8M5 10v10h14V10" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="currentColor"/><path d="M9.6 9.5a2.5 2.5 0 1 1 3.6 2.2c-.8.5-1.2.9-1.2 1.8M12 17v.2" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 12h6M9 16h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-headset" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2" fill="none" stroke="currentColor" stroke-width="2"/><rect x="3" y="13" width="4" height="6" rx="1.5" fill="currentColor"/><rect x="17" y="13" width="4" height="6" rx="1.5" fill="currentColor"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M6 21h12M5 7h14M5 7l-3 7a3.5 3.5 0 0 0 6 0zM19 7l-3 7a3.5 3.5 0 0 0 6 0z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.4 8 8 9 4.6-1 8-4 8-9V6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m8.5 12 2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-phone2" viewBox="0 0 24 24"><path d="M6 3h3l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v3a3 3 0 0 1-3 3A15 15 0 0 1 3 6a3 3 0 0 1 3-3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="logo" viewBox="0 0 100 84">
+      <path d="M52 22c-4-12 6-20 18-20 0 12-6 19-18 20z" fill="#4faa3e"/>
+      <path d="M44 24c-2-9-12-13-22-9 3 9 12 13 22 9z" fill="#6cc14f"/>
+      <use href="#potato" x="4" y="14" width="92" height="64"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="proto" data-i18n="proto">نسخة تجريبية: لا يتم إرسال أو حفظ أي بيانات.</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#accueil" aria-label="BATATATI">
+      <svg viewBox="0 0 100 84" aria-hidden="true"><use href="#logo"/></svg>
+      <span class="name">
+        <span class="lat">BATATATI</span>
+        <span class="ar">بطاطتي</span>
+        <span class="dom"><svg aria-hidden="true"><use href="#i-globe"/></svg>batatati.dz</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Navigation">
+      <a class="on" href="#accueil"><svg aria-hidden="true"><use href="#i-home"/></svg><span data-i18n="n_home">الرئيسية</span></a>
+      <a href="#comment"><svg aria-hidden="true"><use href="#i-help"/></svg><span data-i18n="n_how">كيف أحجز؟</span></a>
+      <a href="#points"><svg aria-hidden="true"><use href="#i-store"/></svg><span data-i18n="n_points">نقاط البيع</span></a>
+      <a href="#conditions"><svg aria-hidden="true"><use href="#i-doc"/></svg><span data-i18n="n_cond">شروط الحجز</span></a>
+      <a href="#contact"><svg aria-hidden="true"><use href="#i-headset"/></svg><span data-i18n="n_contact">اتصل بنا</span></a>
+    </nav>
+    <div class="tools">
+      <div class="lang" role="group" aria-label="Langue / اللغة">
+        <button type="button" data-lang="ar" aria-pressed="true">العربية</button>
+        <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+      </div>
+      <button type="button" class="btn-citizen" id="citizen"><svg aria-hidden="true"><use href="#i-user"/></svg><span data-i18n="citizen">فضاء المواطن</span></button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" id="accueil">
+  <div class="main">
+
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="h1">
+      <div class="hero-bg" role="img" aria-label="Alger : le Mémorial du Martyr, la Grande Poste et des pommes de terre"></div>
+
+      <div class="hero-title">
+        <h1 id="h1" style="margin:0">
+          <span class="big">
+            <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M6 34C4 14 20 4 36 4c1 18-8 30-30 30z" fill="#4faa3e"/><path d="M8 32C16 22 24 14 34 8" stroke="#2c7a2b" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            <span data-i18n="h_title">بطاطتي</span>
+          </span><br>
+          <span class="slogan" data-i18n-html="h_slogan">احجز <em>حصتك</em> بكل سهولة</span>
+        </h1>
+      </div>
+      <p class="sub" data-i18n="h_sub">منصة رقمية لتسهيل عملية حجز البطاطا للمواطنين عبر الإنترنت.</p>
+
+      <div class="scene">
+        <button type="button" class="cta" id="cta">
+          <span data-i18n="h_cta">احجز بطاطتي</span>
+          <svg class="hand" viewBox="0 0 32 32" aria-hidden="true">
+            <g class="cursor"><path d="M8 6v18l5-4 3 7 4-2-3-7h7z" fill="#fff" stroke="#16301f" stroke-width="1.6" stroke-linejoin="round"/></g>
+            <path d="M4 5 2 3M7 2V0M11 4l1-2" stroke="#fff3c4" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="banner">
+        <h2 data-i18n="b_title">احجز بطاطتك بكل طمأنينة</h2>
+        <p data-i18n="b_text">منصة مصممة للمواطن يمكن من إجراء حجز البطاطا مباشرة عبر هذا الموقع بكل سهولة</p>
+      </div>
+    </section>
+
+    <!-- FORM -->
+    <aside class="card" id="reserver" aria-labelledby="f-title">
+      <header>
+        <h2 id="f-title" data-i18n="f_title">استمارة حجز البطاطا</h2>
+        <svg aria-hidden="true"><use href="#i-clip"/></svg>
+      </header>
+      <div class="body" id="formBody">
+        <form id="form" novalidate>
+          <div class="grid1" style="gap:10px">
+            <fieldset>
+              <legend><span class="num">1</span><span data-i18n="s1">المعلومات الشخصية</span><svg aria-hidden="true"><use href="#i-user"/></svg></legend>
+              <div class="grid2">
+                <label class="f" data-k="prenom"><span class="l req" data-i18n="l_prenom">الاسم</span><input id="prenom" name="prenom" autocomplete="given-name"><svg aria-hidden="true" style="top:28px"><use href="#i-user"/></svg><span class="err" data-err></span></label>
+                <label class="f" data-k="nom"><span class="l req" data-i18n="l_nom">اللقب</span><input id="nom" name="nom" autocomplete="family-name"><svg aria-hidden="true" style="top:28px"><use href="#i-user"/></svg><span class="err" data-err></span></label>
+                <label class="f" data-k="dob"><span class="l req" data-i18n="l_dob">تاريخ الميلاد</span><input id="dob" name="dob" type="date" autocomplete="bday"><span class="err" data-err></span></label>
+                <label class="f" data-k="pob"><span class="l req" data-i18n="l_pob">مكان الميلاد</span><input id="pob" name="pob"><svg aria-hidden="true" style="top:28px"><use href="#i-pin"/></svg><span class="err" data-err></span></label>
+              </div>
+              <label class="f" data-k="nin"><span class="l req" data-i18n="l_nin">رقم بطاقة التعريف الوطنية</span><input id="nin" name="nin" inputmode="numeric" maxlength="18" autocomplete="off"><svg aria-hidden="true" style="top:28px"><use href="#i-id"/></svg><span class="err" data-err></span></label>
+              <div class="grid2">
+                <label class="f" data-k="tel"><span class="l req" data-i18n="l_tel">رقم الهاتف</span><input id="tel" name="tel" type="tel" inputmode="tel" autocomplete="tel"><svg aria-hidden="true" style="top:28px"><use href="#i-phone"/></svg><span class="err" data-err></span></label>
+                <label class="f" data-k="mail"><span class="l" data-i18n="l_mail">البريد الإلكتروني</span><input id="mail" name="mail" type="email" autocomplete="email"><svg aria-hidden="true" style="top:28px"><use href="#i-mail"/></svg><span class="err" data-err></span></label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend><span class="num">2</span><span data-i18n="s2">معلومات الحجز</span><svg aria-hidden="true"><use href="#i-cart"/></svg></legend>
+              <div class="resa">
+                <div class="sum">
+                  <div class="row"><span data-i18n="r_prod">المنتوج</span><span data-i18n="r_prodv">البطاطا</span></div>
+                  <div class="row"><span data-i18n="r_qty">الكمية</span>
+                    <span class="qty" style="width:110px"><select id="qty" name="qty" aria-label="Quantité"></select></span>
+                  </div>
+                  <div class="row"><span data-i18n="r_unit">سعر الوحدة</span><span id="unit">60 DA / كغ</span></div>
+                  <div class="row tot"><span data-i18n="r_total">المبلغ الإجمالي</span><span id="total">300 DA</span></div>
+                </div>
+                <svg class="pic" viewBox="0 0 112 100" aria-hidden="true">
+                  <rect x="2" y="2" width="108" height="96" rx="10" fill="#fff3cc"/>
+                  <path d="M8 90C0 60 12 38 40 34c30-4 52 12 62 32 4 10 2 20-2 26z" fill="url(#sg)" stroke="#6b431c" stroke-width="2"/>
+                  <use href="#potato" x="22" y="18" width="46" height="32"/><use href="#potato" x="52" y="30" width="50" height="35"/><use href="#potato" x="14" y="46" width="44" height="31"/>
+                </svg>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend><span class="num">3</span><span data-i18n="s3">اختيار نقطة البيع</span><svg aria-hidden="true"><use href="#i-pin"/></svg></legend>
+              <div class="grid1">
+                <label class="f" data-k="wilaya"><span class="l req" data-i18n="l_wilaya">الولاية</span><select id="wilaya" name="wilaya"></select><span class="err" data-err></span></label>
+                <label class="f" data-k="commune"><span class="l req" data-i18n="l_commune">البلدية</span><select id="commune" name="commune"></select><span class="err" data-err></span></label>
+                <label class="f" data-k="sp"><span class="l req" data-i18n="l_sp">نقطة البيع</span><select id="sp" name="sp"></select><span class="err" data-err></span></label>
+              </div>
+              <p class="note" data-i18n="ex">قائمة توضيحية للتجربة فقط.</p>
+            </fieldset>
+
+            <label class="agree" id="agreeBox"><input type="checkbox" id="agree"><span data-i18n="agree">أوافق على شروط واستعمال البيانات الشخصية.</span></label>
+            <button type="submit" class="confirm"><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="confirm">تأكيد الحجز</span></button>
+            <p class="note" data-i18n="proto2">نسخة تجريبية: لا يتم إرسال أو حفظ أي بيانات.</p>
+          </div>
+        </form>
+      </div>
+    </aside>
+  </div>
+
+  <!-- INFO SECTIONS (targets of the navigation) -->
+  <div class="info">
+    <section class="sec" id="comment">
+      <h2 data-i18n="how_t">كيف أحجز؟</h2>
+      <ol class="steps">
+        <li><span class="n">1</span><b data-i18n="how1t">املأ بياناتك</b><span data-i18n="how1">أدخل معلوماتك الشخصية كما هي في بطاقة التعريف الوطنية.</span></li>
+        <li><span class="n">2</span><b data-i18n="how2t">اختر الكمية</b><span data-i18n="how2">حدّد الكمية بالكيلوغرام ويُحسب المبلغ تلقائيا.</span></li>
+        <li><span class="n">3</span><b data-i18n="how3t">اختر نقطة البيع</b><span data-i18n="how3">اختر الولاية والبلدية ثم نقطة البيع الأقرب إليك وأكّد الحجز.</span></li>
+      </ol>
+    </section>
+
+    <section class="sec" id="points">
+      <h2 data-i18n="pts_t">نقاط البيع</h2>
+      <div class="points" id="pointsList"></div>
+    </section>
+
+    <section class="sec" id="conditions">
+      <h2 data-i18n="cond_t">شروط الحجز</h2>
+      <ul>
+        <li data-i18n="cond1">حجز واحد لكل مواطن في كل فترة.</li>
+        <li data-i18n="cond2">الحد الأقصى للكمية: 10 كغ لكل حجز.</li>
+        <li data-i18n="cond3">يجب أن تكون المعلومات المدخلة صحيحة ومطابقة لبطاقة التعريف.</li>
+        <li data-i18n="cond4">الدفع عند الاستلام في نقطة البيع المختارة.</li>
+      </ul>
+    </section>
+
+    <section class="sec" id="contact">
+      <h2 data-i18n="ct_t">اتصل بنا</h2>
+      <div class="contact-line"><span>contact@exemple.invalid</span><span>+213 00 00 00 00</span></div>
+      <p class="note" style="text-align:start;margin-top:10px" data-i18n="ct_n">بيانات الاتصال أمثلة توضيحية، يجب استبدالها بالبيانات الحقيقية.</p>
+    </section>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <a class="brand" href="#accueil" aria-label="BATATATI">
+      <svg viewBox="0 0 100 84" aria-hidden="true" style="width:58px;height:48px"><use href="#logo"/></svg>
+      <span class="name">
+        <span class="lat">BATATATI</span>
+        <span class="ar">بطاطتي</span>
+        <span class="dom"><svg aria-hidden="true"><use href="#i-globe"/></svg>batatati.dz</span>
+      </span>
+    </a>
+    <nav aria-label="Footer">
+      <a href="#contact"><svg aria-hidden="true"><use href="#i-phone2"/></svg><span data-i18n="n_contact">اتصل بنا</span></a>
+      <a href="#conditions"><svg aria-hidden="true"><use href="#i-scale"/></svg><span data-i18n="f_terms">شروط الاستخدام</span></a>
+      <a href="#conditions"><svg aria-hidden="true"><use href="#i-shield"/></svg><span data-i18n="f_priv">سياسة الخصوصية</span></a>
+      <a href="#conditions"><svg aria-hidden="true"><use href="#i-doc"/></svg><span data-i18n="f_legal">ملاحظات قانونية</span></a>
+    </nav>
+  </div>
+  <p class="copy" data-i18n="copy">BATATATI © 2026 · نسخة تجريبية غير رسمية</p>
+</footer>
+
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>
